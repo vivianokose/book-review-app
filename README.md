@@ -46,8 +46,7 @@ The app is deployed across three isolated tiers on AWS inside a custom VPC (`10.
 | DB SG | TCP 3306 | App SG only |
 
 ### Architecture Diagram
-
-*(See `/architecture/architecture-diagram.png`)*
+![architecture-diagram](./architecture/architecture-diagram.svg)
 
 ### Application-Level Architecture
 
