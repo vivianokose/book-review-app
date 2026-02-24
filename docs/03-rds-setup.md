@@ -88,8 +88,8 @@ book-review-db.xxxxxxxxxx.us-east-1.rds.amazonaws.com
 
 | Detail | Value |
 |--------|-------|
-| Primary Endpoint | *(update after creation)* |
-| Replica Endpoint | *(update after creation)* |
+| Primary Endpoint | book-review-db.cgdwgcgy8hsp.us-east-1.rds.amazonaws.com |
+| Replica Endpoint | book-review-db-replica.cgdwgcgy8hsp.us-east-1.rds.amazonaws.com |
 | Port | 3306 |
 | Database Name | `bookreviews` |
 | Username | `admin` |
