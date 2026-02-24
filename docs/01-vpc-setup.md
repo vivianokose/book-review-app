@@ -115,6 +115,25 @@ INTERNET
 
 ---
 
+## Screenshots
+
+| Screenshot | Description |
+|------------|-------------|
+| `screenshots/01-vpc-created.png` | VPC details showing name, CIDR, and Available status |
+| `screenshots/02-igw-attached.png` | Internet Gateway attached to book-review-vpc |
+| `screenshots/03-all-subnets-created.png` | All 6 subnets listed and filtered by book-review-vpc |
+| `screenshots/04-public-route-table.png` | public-rt routes and subnet associations |
+| `screenshots/05-private-route-table.png` | private-rt subnet associations |
+| `screenshots/06-web-subnet-auto-ip-enabled.png` | web-subnet-1 auto-assign public IP enabled |
+
+---
+
+## Troubleshooting
+
+No issues encountered during VPC setup.
+
+---
+
 ## Commit Reference
 
 ```
