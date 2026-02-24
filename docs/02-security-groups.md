@@ -2,7 +2,17 @@
 
 ## Overview
 
-Three security groups were created inside `book-review-vpc` to control traffic flow between tiers using the principle of least privilege. Each tier only accepts traffic from its direct upstream source — nothing more.
+This document covers the security group configuration for the Book Review App AWS deployment. Three security groups were created inside `book-review-vpc` to control traffic flow between tiers using the principle of least privilege. Each tier only accepts traffic from its direct upstream source — nothing more.
+
+---
+
+## Resources Created
+
+| Resource | Name | Purpose |
+|----------|------|---------|
+| Security Group | `web-sg` | Controls traffic to Web Tier EC2 instances |
+| Security Group | `app-sg` | Controls traffic to App Tier EC2 instances |
+| Security Group | `db-sg` | Controls traffic to RDS MySQL instance |
 
 ---
 
@@ -85,19 +95,19 @@ Three security groups were created inside `book-review-vpc` to control traffic f
 ## Traffic Flow Summary
 
 ```
+## Traffic Flow Summary
+
+```
 INTERNET
     │
-    │  Port 80 (HTTP)
-    ▼
-[ web-sg ]  ←── Public ALB forwards traffic here
+    ▼ (port 80/443)
+[web-sg] → Web Tier EC2
     │
-    │  Port 3001 (web-sg as source)
-    ▼
-[ app-sg ]  ←── Internal ALB forwards traffic here
+    ▼ (port 3001, source: web-sg only)
+[app-sg] → App Tier EC2
     │
-    │  Port 3306 (app-sg as source)
-    ▼
-[ db-sg ]   ←── RDS MySQL instance
+    ▼ (port 3306, source: app-sg only)
+[db-sg]  → RDS MySQL
 ```
 
 ---
@@ -111,8 +121,24 @@ INTERNET
 
 ---
 
+## Screenshots
+
+| Screenshot | Description |
+|------------|-------------|
+| `screenshots/07-web-sg-inbound.png` | web-sg inbound rules |
+| `screenshots/08-app-sg-inbound.png` | app-sg inbound rules |
+| `screenshots/09-db-sg-inbound.png` | db-sg inbound rules |
+
+---
+
+## Troubleshooting
+
+*To be updated if any issues are encountered*
+
+---
+
 ## Commit Reference
 
 ```
-chore: add security groups for web, app, and database tiers
+chore: add security groups for web, app, and db tiers
 ```
