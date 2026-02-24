@@ -204,3 +204,19 @@ chore: deploy Node.js backend on app tier EC2 with PM2 and SSM access
 
 **Lesson learned:** Always attach the IAM SSM role and enable Auto-assign
 Public IP BEFORE launching your instance to avoid these issues.
+
+### Missing start script in package.json
+**Issue:** `npm start` failed with "Missing script: start"
+**Root Cause:** The backend package.json had no start script defined
+**Fix:** Added `"start": "node src/server.js"` to the scripts section in package.json
+
+### Environment variable mismatch
+**Issue:** Database connection failed silently
+**Root Cause:** .env used `DB_PASSWORD` but db.js reads `DB_PASS`
+**Fix:** Updated .env to use `DB_PASS` to match the variable name in db.js
+
+### No internet access in private subnet
+**Issue:** apt update and npm install failed with "Network is unreachable"
+**Root Cause:** Private subnet has no internet access by default
+**Fix:** Created a NAT Gateway in web-subnet-1 and added 0.0.0.0/0 → NAT Gateway
+route to private-rt
