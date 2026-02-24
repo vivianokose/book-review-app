@@ -133,7 +133,7 @@ INTERNET
 
 ## Troubleshooting
 
-*To be updated if any issues are encountered*
+No issues encountered during security group setup.
 
 ---
 
