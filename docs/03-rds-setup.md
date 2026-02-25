@@ -93,6 +93,10 @@ book-review-db.xxxxxxxxxx.us-east-1.rds.amazonaws.com
 | Port | 3306 |
 | Database Name | `bookreviews` |
 | Username | `admin` |
+| Engine Version | MySQL 8.4.8 |
+| Instance Class | db.t3.micro |
+| Multi-AZ | No (Free Tier limitation) |
+| Read Replica | book-review-db-replica |
 
 ---
 
